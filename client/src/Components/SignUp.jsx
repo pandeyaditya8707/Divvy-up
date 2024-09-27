@@ -10,7 +10,7 @@ export default function SignUp() {
     name: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmpassword: "",
   });
 
   const [isEmailValid, setIsEmailValid] = useState(true);
@@ -46,8 +46,8 @@ export default function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password, confirmPassword } = user;
-
+    const { name, email, password, confirmpassword } = user;
+    console.log(user);
     if (!isEmailValid) {
       alert("Please enter a valid email address.");
       return;
@@ -55,12 +55,12 @@ export default function SignUp() {
 
     try {
       const response = await axios.post(
-        "/user/signup",
+        "http://localhost:4000/user/signup",
         {
           name,
           email,
           password,
-          confirmPassword,
+          confirmpassword,
         },
         {
           headers: {
@@ -185,7 +185,7 @@ export default function SignUp() {
           </div>
           <div className="mt-4 relative">
             <label
-              htmlFor="confirmPassword"
+              htmlFor="confirmpassword"
               className="block text-sm font-medium text-gray-700 undefined"
             >
               Confirm Password
@@ -193,7 +193,7 @@ export default function SignUp() {
             <div className="flex flex-col items-start">
               <input
                 type={showCPassword ? "text" : "password"}
-                name="confirmPassword"
+                name="confirmpassword"
                 onChange={handleInputs}
                 className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />

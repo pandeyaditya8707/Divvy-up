@@ -1,7 +1,7 @@
 const fetchUserDetails = async () => {
     // const navigate = useNavigate();
     try {
-        const res = await fetch("/user/details", {
+        const res = await fetch("https://divvy-up.onrender.com/user/details", {
             method: "GET",
             headers: {
                 Accept: "application/json",

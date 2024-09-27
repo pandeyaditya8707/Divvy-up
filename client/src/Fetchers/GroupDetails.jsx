@@ -1,6 +1,6 @@
 const getGroupDetails = async (_id) => {
     try {
-        const res = await fetch(`/group/member/${_id}`, {
+        const res = await fetch(`https://divvy-up.onrender.com/group/member/${_id}`, {
             method: "GET",
             headers: {
                 Accept: "application/json",

@@ -13,6 +13,7 @@ router.use(cookieParser());
 
 router.post("/signup", async (req, res) => {
   const { name, email, password, confirmpassword } = req.body;
+  console.log(req.body);
   if (!name || !email || !password) {
     return res.status(422).json({ error: "please fill the field properly" });
   }
@@ -20,7 +21,7 @@ router.post("/signup", async (req, res) => {
     const userExist = await User.findOne({ email: email });
     if (userExist) {
       return res.status(422).json({ error: "user already exists" });
-    } else if (password !== confirmpassword) {
+    } else if (password != confirmpassword) {
       return res.status(422).json({ error: "password are not matching" });
     } else {
       const user = new User({ name, email, password });
