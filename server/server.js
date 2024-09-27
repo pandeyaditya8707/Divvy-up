@@ -11,7 +11,9 @@ const morgan = require("morgan");
 const connectDB = require("./config/config");
 const multer = require("multer");
 const mongoose = require("mongoose");
-dotenv.config();
+//dotenv.config();
+require('dotenv').config();
+
 
 connectDB();
 

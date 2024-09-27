@@ -69,7 +69,7 @@ const Home = () => {
                         )}
                     </div>
                     {groupList ? (
-                        <div className="dark:bg-gray-900 dark:text-white mt-6 grid w-full space-y-3 sm:place-content-center sm:place-items-center sm:space-y-0 md:grid-cols-2 lg:grid-cols-3">
+                        <div className="dark:bg-gray-900 dark:text-white-white md:relative md: float-right md:w-[90%] xl:max-w-screen-lg mx-auto">
                             {groupList.slice(0, 3).map((group) => (
                                 <div
                                     key={group._id}
