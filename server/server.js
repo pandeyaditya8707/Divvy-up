@@ -18,7 +18,8 @@ require('dotenv').config();
 connectDB();
 
 const app = express();
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: ["http://localhost:3000",
+"https://divvy-up-mauve.vercel.app/"] }));
 app.use(morgan("dev"));
 app.use("/files", express.static("files"));
 
